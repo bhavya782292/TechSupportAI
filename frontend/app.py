@@ -39,7 +39,7 @@ if not chunks:
 @st.cache_resource
 def get_model(key):
     return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-3.8-flash,
         google_api_key=key,
         temperature=0,
     )
