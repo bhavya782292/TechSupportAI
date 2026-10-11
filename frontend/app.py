@@ -21,7 +21,10 @@ st.caption("Technical Hardware & Software Resolution Hub")
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
 except Exception:
-    st.error("Add GOOGLE_API_KEY in Streamlit Cloud → Settings → Secrets.")
+    st.error(
+        "Missing GOOGLE_API_KEY. Add it in "
+        "Streamlit Cloud → Manage app → Settings → Secrets."
+    )
     st.stop()
 
 # ---------------- KNOWLEDGE BASE ----------------
@@ -58,9 +61,14 @@ def load_chunks():
 chunks = load_chunks()
 
 if not chunks:
-    st.error("No .txt files found in data/knowledge_base.")
+    st.error(
+        "No .txt knowledge-base files found in "
+        "data/knowledge_base."
+    )
     st.stop()
 
+
+# ---------------- SEARCH INDEX ----------------
 
 @st.cache_resource
 def build_search_index(texts):
@@ -72,21 +80,6 @@ search_index = build_search_index(
     tuple(item["text"] for item in chunks)
 )
 
-# ---------------- GEMINI MODEL ----------------
-
-@st.cache_resource
-def get_model(key):
-    return ChatGoogleGenerativeAI(
-        model="gemini-3.8-flash",
-        google_api_key=key,
-        temperature=0,
-        max_output_tokens=300,
-    )
-
-
-model = get_model(api_key)
-
-# ---------------- RETRIEVAL ----------------
 
 def retrieve_context(question):
     scores = search_index.get_scores(question.lower().split())
@@ -104,11 +97,26 @@ def retrieve_context(question):
     if not selected:
         return ""
 
-    return "\n\n".join(
+    return "\n\n---\n\n".join(
         f"Source: {chunks[i]['source']}\n"
         f"{chunks[i]['text'][:800]}"
         for i in selected
     )
+
+
+# ---------------- GEMINI MODEL ----------------
+
+@st.cache_resource
+def get_model(key):
+    return ChatGoogleGenerativeAI(
+        model="gemini-3.8-flash",
+        google_api_key=key,
+        temperature=0,
+        max_output_tokens=300,
+    )
+
+
+model = get_model(api_key)
 
 
 # ---------------- RESPONSE CLEANUP ----------------
@@ -141,9 +149,10 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 
-# ---------------- CHAT ----------------
+# ---------------- CHAT INPUT ----------------
 
 question = st.chat_input("Describe your technical issue...")
+
 
 if question:
     st.session_state.messages.append({
@@ -156,25 +165,25 @@ if question:
 
     with st.chat_message("assistant"):
         try:
-            with st.spinner("Finding the best troubleshooting steps..."):
+            with st.spinner("Searching for troubleshooting steps..."):
                 context = retrieve_context(question)
 
                 if not context:
                     answer = (
-                        "I couldn't find a relevant answer in the "
-                        "knowledge base. Please provide the device "
-                        "model and describe the symptoms."
+                        "I couldn't find relevant information in the "
+                        "knowledge base. Please provide the device model "
+                        "and describe the symptoms."
                     )
                 else:
                     system_prompt = """
 You are TechSupportAI, a concise technical support assistant.
 
-Use only the provided knowledge-base context.
-Identify the user's specific device and issue.
-Give up to 3 relevant, numbered troubleshooting steps.
-Use short, clear sentences.
-Do not invent product-specific facts or unrelated advice.
+Use the supplied knowledge-base context.
+Identify the specific device and issue.
+Give up to 3 clear, numbered troubleshooting steps.
+Avoid unrelated or invented product-specific advice.
 If the context is insufficient, say so.
+Keep answers short and practical.
 """
 
                     response = model.invoke([
@@ -188,7 +197,10 @@ If the context is insufficient, say so.
                     answer = clean_response(response.content)
 
                     if not answer:
-                        answer = "No readable response was returned. Please retry."
+                        answer = (
+                            "No readable response was returned. "
+                            "Please try again."
+                        )
 
             st.markdown(answer)
 
@@ -197,14 +209,19 @@ If the context is insufficient, say so.
                 "content": answer,
             })
 
-                except Exception as error:
+        except Exception as error:
             error_text = str(error)
 
-            if "RESOURCE_EXHAUSTED" in error_text or "429" in error_text:
+            if (
+                "RESOURCE_EXHAUSTED" in error_text
+                or "429" in error_text
+            ):
                 st.warning(
-                    "The AI service has reached its free usage limit. "
+                    "The Gemini API free-tier quota has been reached. "
                     "Please try again after the quota resets."
                 )
             else:
-                st.error("Couldn't generate an answer. Please try again.")
-                st.caption(error_text)
+                st.error(
+                    "Couldn't generate an answer. Please try again."
+                )
+                st.caption(f"Technical details: {error_text}")
