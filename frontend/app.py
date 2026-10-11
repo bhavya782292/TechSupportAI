@@ -197,7 +197,14 @@ If the context is insufficient, say so.
                 "content": answer,
             })
 
-        except Exception as error:
-            st.error("Couldn't generate an answer. Please try again.")
-            st.caption(f"Technical details: {error}")
+                except Exception as error:
+            error_text = str(error)
 
+            if "RESOURCE_EXHAUSTED" in error_text or "429" in error_text:
+                st.warning(
+                    "The AI service has reached its free usage limit. "
+                    "Please try again after the quota resets."
+                )
+            else:
+                st.error("Couldn't generate an answer. Please try again.")
+                st.caption(error_text)
