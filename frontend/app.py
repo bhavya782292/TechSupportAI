@@ -39,11 +39,10 @@ if not chunks:
 @st.cache_resource
 def get_model(key):
     return ChatGoogleGenerativeAI(
-        model=gemini-3.8-flash,
+        model="gemini-3.8-flash",
         google_api_key=key,
         temperature=0,
     )
-
 model = get_model(api_key)
 
 if "messages" not in st.session_state:
