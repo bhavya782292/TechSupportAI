@@ -1,0 +1,53 @@
+# Software Troubleshooting Guide
+
+## Application Crashes
+
+If an application repeatedly crashes:
+
+1. Restart the application.
+2. Restart the computer.
+3. Check whether an application update is available.
+4. Check whether the operating system is up to date.
+5. Clear the application's temporary cache if supported.
+6. Reinstall the application if the issue continues.
+
+## Application Is Not Responding
+
+If an application becomes unresponsive:
+
+1. Wait briefly to determine whether the application recovers.
+2. Close unnecessary applications.
+3. Check available system memory.
+4. Force-close and restart the application.
+5. Install available application updates.
+
+## Login Failure
+
+If a user cannot log in:
+
+1. Verify the username or email address.
+2. Re-enter the password carefully.
+3. Check whether Caps Lock is enabled.
+4. Use the password-reset process if the password is forgotten.
+5. Check whether the service is experiencing an outage.
+6. Contact technical support if the account remains inaccessible.
+
+## Software Update Failure
+
+If a software update fails:
+
+1. Check the internet connection.
+2. Restart the application.
+3. Restart the computer.
+4. Check available storage space.
+5. Retry the update.
+6. Contact technical support if the update repeatedly fails.
+
+## Escalation
+
+Escalate to technical support when:
+
+- The application continues crashing after reinstalling.
+- The user cannot access the account after completing password recovery.
+- Software updates repeatedly fail.
+- The issue appears to be caused by a system-wide service problem.

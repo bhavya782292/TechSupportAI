@@ -1,0 +1,40 @@
+# Router Troubleshooting Guide
+
+## Router Has No Internet Connection
+
+If the router is powered on but devices cannot access the internet, follow these steps:
+
+1. Check that the WAN/Internet cable is securely connected.
+2. Restart the router by unplugging it for 30 seconds and plugging it back in.
+3. Check whether the router's Internet/WAN indicator is showing an error.
+4. Verify that the modem or upstream network device is powered on.
+5. If the issue continues, check whether the ISP is experiencing an outage.
+
+## Router Keeps Disconnecting
+
+If the connection repeatedly drops:
+
+1. Check the power adapter and wall socket.
+2. Move the router away from sources of electrical interference.
+3. Check whether the router firmware is up to date.
+4. Test the connection using an Ethernet cable.
+5. If Ethernet is stable but Wi-Fi disconnects, investigate wireless interference or configuration.
+
+## Router Overheating
+
+If the router becomes unusually hot:
+
+1. Place the router in a well-ventilated location.
+2. Do not place it inside an enclosed cabinet.
+3. Keep air vents unobstructed.
+4. Restart the router and monitor its temperature.
+5. If overheating continues, contact technical support.
+
+## Escalation
+
+Escalate the issue to technical support when:
+
+- The router does not power on after checking the power supply.
+- The Internet connection remains unavailable after basic troubleshooting.
+- The router repeatedly restarts by itself.
+- Hardware damage is visible.

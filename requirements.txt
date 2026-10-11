@@ -1,0 +1,53 @@
+# FastAPI Backend
+fastapi==0.142.2
+uvicorn[standard]
+pydantic==2.13.5
+pydantic-settings
+python-multipart
+
+# Streamlit Frontend
+streamlit
+requests
+
+# LangChain
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+
+# Document Processing
+pypdf
+python-docx
+openpyxl
+
+# Embeddings & Vector Database
+numpy==1.26.4
+scipy==1.12.0
+torch==2.2.2
+transformers==4.57.6
+sentence-transformers==2.7.0
+huggingface-hub==0.36.2
+chromadb
+
+# Sparse Retrieval
+rank-bm25
+
+# Cross-Encoder Reranking
+# Uses the pinned Transformers/PyTorch stack above
+
+# LLM
+langchain-google-genai
+
+# Observability
+langsmith
+
+# Environment
+python-dotenv
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Code Quality
+ruff

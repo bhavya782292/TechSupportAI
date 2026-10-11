@@ -1,0 +1,41 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Generated vector database
+data/indexes/
+
+# Evaluation outputs
+evaluation/results/
+
+# Logs
+logs/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+.ragas-venv/# Secrets
+.env
+.env.*
+
+# Keep the example configuration
+!.env.example
+
+# Python environments
+.venv/
+.ragas-venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Logs and local indexes
+logs/
+data/indexes/
+
+# OS files
+.DS_Store

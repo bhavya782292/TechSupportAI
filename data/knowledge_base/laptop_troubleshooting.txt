@@ -1,0 +1,43 @@
+# Laptop Troubleshooting Guide
+
+## Laptop Does Not Turn On
+
+If the laptop does not power on:
+
+1. Connect the original power adapter.
+2. Check whether the charging indicator turns on.
+3. Try a different wall socket.
+4. Disconnect external USB devices and try powering on again.
+5. If there is still no response, escalate to technical support.
+
+## Laptop Is Running Slowly
+
+If the laptop has become unusually slow:
+
+1. Restart the laptop.
+2. Check available storage space.
+3. Close unnecessary background applications.
+4. Check CPU and memory usage.
+5. Install pending operating system updates.
+6. Scan the system for malware if suspicious activity is detected.
+
+## Laptop Overheating
+
+If the laptop becomes unusually hot:
+
+1. Make sure the ventilation openings are not blocked.
+2. Use the laptop on a hard, flat surface.
+3. Close applications that are heavily using the CPU.
+4. Check whether the cooling fan is working normally.
+5. If overheating continues, contact technical support.
+
+## Battery Drains Quickly
+
+If battery life is significantly lower than expected:
+
+1. Reduce screen brightness.
+2. Close unnecessary applications.
+3. Check which applications are consuming the most battery.
+4. Enable the operating system's battery-saving mode.
+5. Check battery health if the operating system provides this information.
+6. Contact technical support if the battery is swollen or physically damaged.

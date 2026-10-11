@@ -1,0 +1,82 @@
+[
+  {
+    "question": "My router keeps disconnecting. What should I check?",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "My laptop is overheating. What can I do?",
+    "expected_chunks": ["laptop_troubleshooting.txt:0"]
+  },
+  {
+    "question": "The application keeps crashing. How should I troubleshoot it?",
+    "expected_chunks": ["software_troubleshooting.txt:4"]
+  },
+  {
+    "question": "What should I do if my router has no internet connection?",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "My laptop battery drains very quickly. What should I check?",
+    "expected_chunks": ["laptop_troubleshooting.txt:1"]
+  },
+  {
+    "question": "I cannot log in to the application. What should I check?",
+    "expected_chunks": ["software_troubleshooting.txt:5"]
+  },
+  {
+    "question": "The Wi-Fi connection drops again and again. How can I troubleshoot it?",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "My notebook gets extremely hot while I am using it.",
+    "expected_chunks": ["laptop_troubleshooting.txt:0"]
+  },
+  {
+    "question": "The program suddenly closes whenever I use it.",
+    "expected_chunks": ["software_troubleshooting.txt:4"]
+  },
+  {
+    "question": "There is no internet even though my router is switched on.",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "My computer battery is losing charge much faster than before.",
+    "expected_chunks": ["laptop_troubleshooting.txt:1"]
+  },
+  {
+    "question": "The application refuses to let me sign in.",
+    "expected_chunks": ["software_troubleshooting.txt:5"]
+  },
+  {
+    "question": "What can I try when my router connection repeatedly drops?",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "What should I do when my laptop becomes unusually hot?",
+    "expected_chunks": ["laptop_troubleshooting.txt:0"]
+  },
+  {
+    "question": "How do I troubleshoot an app that repeatedly crashes?",
+    "expected_chunks": ["software_troubleshooting.txt:4"]
+  },
+  {
+    "question": "The router is powered on but none of my devices can get online.",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "My laptop battery percentage falls very quickly. What should I investigate?",
+    "expected_chunks": ["laptop_troubleshooting.txt:1"]
+  },
+  {
+    "question": "I know my password but the software still won't let me access my account.",
+    "expected_chunks": ["software_troubleshooting.txt:5"]
+  },
+  {
+    "question": "What can cause repeated connection drops on a router?",
+    "expected_chunks": ["router_troubleshooting.txt:2"]
+  },
+  {
+    "question": "What are the basic things to check if a laptop is getting too hot?",
+    "expected_chunks": ["laptop_troubleshooting.txt:0"]
+  }
+]
