@@ -8,6 +8,14 @@ issues by retrieving relevant information from a local knowledge
 base and using a Gemini language model to generate helpful
 responses.
 
+## 🚀 Live Demo
+
+**Try TechSupportAI here:** [Launch TechSupportAI](https://techsupportai-cb7m6kgr3rd8e22sn2qrlf.streamlit.app/)
+
+> Note: The live demo uses the Gemini API free tier, so responses may be temporarily unavailable when the usage quota is exhausted.
+
+
+
 ## Features
 
 - **Hybrid retrieval:** Combines dense vector retrieval with BM25
